@@ -496,3 +496,8 @@ set tags+=./tags,/usr/include/tags,/usr/src/linux-rpi-3.8.y/tags
 " <Leader>sy 自动生成tags与cscope文件并连接
 " " <Leader>sc 连接已存在的tags与cscope文件
 
+"highlight Comment
+highlight Comment ctermfg=yellow ctermbg=blue
+"set cursor line
+hi cursorline cterm=none ctermbg=black
+
