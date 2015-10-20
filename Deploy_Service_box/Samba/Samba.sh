@@ -1,4 +1,4 @@
-##!/bin/sh
+#!/bin/sh
 
 #COLOUR CODE
 RED='\E[1;31m'
@@ -17,39 +17,32 @@ echo -e "${GRN} --> INSTALLED SAMBA ${RES}"
 
 #BUILD SHARE DIRECTORY
 if [ ! -d "$USER_DIR/share" ];then
-  mkdir $USER_DIR/share
-  if [ ! -x "$USER_DIR/share" ];then
-    sudo chmod 777 $USER_DIR/share
-  fi
+	mkdir $USER_DIR/share
+	sudo chmod 777 $USER_DIR/share
 else
-  echo -e "${YEL} [ WARNING ]: ${RES} share dir exist."
-fi	
+	echo -e "${YEL} [ WARNING ]: ${RES} share dir exist."
+fi
 echo -e "${GRN} --> BUILT share DIR ${RES}"
 
 #BACKUP SAMBA CONFIG
 if [ ! -f "$SAMBA_DIR/smb.conf.bak" ];then
-  sudo cp $SAMBA_DIR/smb.conf $SAMBA_DIR/smb.conf.bak
+	sudo cp $SAMBA_DIR/smb.conf $SAMBA_DIR/smb.conf.bak
 else
-  echo -e "${YEL} [ WARNING ]: ${RES} smb.conf.bak exist."
+	echo -e "${YEL} [ WARNING ]: ${RES} smb.conf.bak exist."
 fi
 echo -e "${GRN} --> BACKUPED CONFIG ${RES}"
 
 #ADD SHARE INFORMATION
-grep -q "[share]
-path = /home/ubuntu/share
-available = yes
-browseable = yes
-public = yes
-writable = yes" $SAMBA_DIR/smb.conf
+grep -q "\[share\]" $SAMBA_DIR/smb.conf
 if [ $? -eq 0 ];then
-  echo -e "${YEL} [ WARNING ]: ${RES} The share information had added."
+	echo -e "${YEL} [ WARNING ]: ${RES} The share information had added."
 else
-  sudo sh -c 'echo "[share]
-  path = /home/ubuntu/share
-  available = yes
-  browseable = yes
-  public = yes
-  writable = yes" >> /etc/samba/smb.conf'
+	sudo sh -c 'echo "[share]
+	path = /home/ubuntu/share
+	available = yes
+	browseable = yes
+	public = yes
+	writable = yes" >> /etc/samba/smb.conf'
 fi
 echo -e "${GRN} --> ADDED SHARE INFORMATION ${RES}"
 

@@ -1,2 +1,8 @@
 1st VERSION:
 	This is convenient to deploy Samba service.
+	
+2nd VERSION:
+	Repair the bug of grep  in 38 line. ----->"[.....]" should change "\[.....\]"  
+	
+3rd VERSION:
+	Repair the bug of [share] directory that is a problem of jurisdiction. -------> sudo chmod 777 [share]
