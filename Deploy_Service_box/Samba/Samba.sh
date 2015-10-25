@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #COLOUR CODE
 RED='\E[1;31m'
