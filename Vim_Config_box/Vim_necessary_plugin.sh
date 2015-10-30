@@ -73,11 +73,11 @@ else
 fi
 
 # Dnowload Ctags 
-for ((i=1; i<=2; i++));do
-	sudo apt-get install ctags > ./.record_install 
+$?=1
+while [ $? -ne 0 ]; do
+	sudo apt-get install ctags | tee ./.record_install
 	grep -q "0 upgraded, 0 newly installed" ./.record_install
 done
-grep -q "0 upgraded, 0 newly installed" ./.record_install
 if [ $? -ne 0 ];then
 	echo -e "${WARNING} Fail to install ctags"
 else
@@ -86,11 +86,11 @@ fi
 sudo rm -f ./.record_install
 
 # Dnowload Cscope
-for ((i=1; i<=2; i++));do
-	sudo apt-get install cscope > ./.record_install 
+$?=1
+while [ $? -ne 0 ]; do
+	sudo apt-get install cscope | tee ./.record_install 
 	grep -q "0 upgraded, 0 newly installed" ./.record_install
 done
-grep -q "0 upgraded, 0 newly installed" ./.record_install
 if [ $? -ne 0 ];then
 	echo -e "${WARNING} Fail to install cscope"
 else

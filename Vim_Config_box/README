@@ -9,3 +9,6 @@
 
 4th VERSION:
 	Add shell code for adding vimrc to ~/.vimrc .
+
+5th VERSION:
+	Repair the bug of installation by my code and optimize the "for" circulation.
