@@ -2,7 +2,10 @@
 	This is convenient to use VIM for everyone.
 
 2nd VERSION:
-	you can install cscope now by modify /etc/apt/source.list .
+	You can install cscope now by modify /etc/apt/source.list .
 
 3rd VERSION:
 	Repair a problem of installation package that are ctags and cscope. 
+
+4th VERSION:
+	Add shell code for adding vimrc to ~/.vimrc .

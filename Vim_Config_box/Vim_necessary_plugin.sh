@@ -21,6 +21,15 @@ else
 	echo -e "${SUCCESS} --> REPLACED sources.list"
 fi
 
+# Replace .vimrc
+if [ ! -f ~/.vimrc ];then
+	sudo cp -f ./vimrc ~/.vimrc
+else
+	sudo cp -f ~/.vimrc ~/vimrc.bak
+	sudo cp -f ./vimrc ~/.vimrc
+fi
+echo -e "${SUCCESS} --> Add .vimrc for user now"
+
 # Dnowload Pathogen--->
 git clone https://github.com/tpope/vim-pathogen
 if [ ! -d ./vim-pathogen ];then 
