@@ -12,3 +12,6 @@
 
 5th VERSION:
 	Repair the bug of installation by my code and optimize the "for" circulation.
+
+6th VERSION:
+	Repari the error variable of $? that has been set to one . ----> $?=1
