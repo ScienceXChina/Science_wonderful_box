@@ -1,2 +1,10 @@
 1st VERSION:
 	This is convenient to deploy Wifi for Jetson TK1.(Other platform don't test)
+
+2nd VERSION:
+	Repair a lot of problems for wifi.sh and it can only install for pci-wifi semi-automatically.
+	1. set the variable problem of REBOOT_PARAMETER for wifi.sh .
+	2. ">" change "tee" for the commond --> sudo apt-get install xxxx | __________(you choose).
+	3. delete line by sed is not good to replace /etc/profile .
+	4. find wifi by the commond --> iwlist wlan0 scan that has a problem. you should add "sudo" for it.
+	5. at last, you should reboot again for deploy your wifi, because sudo /etc/init.d/networking restart is so bad.
