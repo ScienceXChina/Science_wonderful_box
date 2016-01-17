@@ -1,2 +1,2 @@
 1st Version:
-	Highlight the keyword in the man.
+	Highlight the keyword in the man.may be you install it by "sudo bash man.sh", and source ~/.bashrc at last.
